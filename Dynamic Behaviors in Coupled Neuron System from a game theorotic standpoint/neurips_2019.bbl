@@ -1,0 +1,136 @@
+\begin{thebibliography}{10}
+
+\bibitem{hodgkin1952dual}
+Allan~L Hodgkin and Andrew~F Huxley.
+\newblock The dual effect of membrane potential on sodium conductance in the
+  giant axon of loligo.
+\newblock {\em The Journal of physiology}, 116(4):497--506, 1952.
+
+\bibitem{wang2003hopf}
+Jiang Wang, H~Zhang, and KM~Tsang.
+\newblock Hopf bifurcation in the hodgkin-huxley model exposed to elf
+  electrical field.
+\newblock In {\em Proceedings of the 25th Annual International Conference of
+  the IEEE Engineering in Medicine and Biology Society (IEEE Cat. No.
+  03CH37439)}, volume~3, pages 2323--2326. IEEE, 2003.
+
+\bibitem{fitzhugh1961impulses}
+Richard FitzHugh.
+\newblock Impulses and physiological states in theoretical models of nerve
+  membrane.
+\newblock {\em Biophysical journal}, 1(6):445, 1961.
+
+\bibitem{parlitz1987period}
+Ulrich Parlitz and Werner Lauterborn.
+\newblock Period-doubling cascades and devil’s staircases of the driven van
+  der pol oscillator.
+\newblock {\em Physical Review A}, 36(3):1428, 1987.
+
+\bibitem{morris1981voltage}
+Catherine Morris and Harold Lecar.
+\newblock Voltage oscillations in the barnacle giant muscle fiber.
+\newblock {\em Biophysical journal}, 35(1):193--213, 1981.
+
+\bibitem{gu2001integer}
+Huaguang Gu, Wei Ren, Qishao Lu, Shunguang Wu, Minghao Yang, and Wenjuan Chen.
+\newblock Integer multiple spiking in neuronal pacemakers without external
+  periodic stimulation.
+\newblock {\em Physics Letters A}, 285(1-2):63--68, 2001.
+
+\bibitem{koper1996experimental}
+MTM Koper and BD~Aguda.
+\newblock Experimental demonstration of delay and memory effects in the
+  bifurcations of nickel electrodissolution.
+\newblock {\em Physical Review E}, 54(1):960, 1996.
+
+\bibitem{gu2013experimental}
+Huaguang Gu.
+\newblock Experimental observation of transition from chaotic bursting to
+  chaotic spiking in a neural pacemaker.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  23(2):023126, 2013.
+
+\bibitem{tsumoto2006bifurcations}
+Kunichika Tsumoto, Hiroyuki Kitajima, Tetsuya Yoshinaga, Kazuyuki Aihara, and
+  Hiroshi Kawakami.
+\newblock Bifurcations in morris--lecar neuron model.
+\newblock {\em Neurocomputing}, 69(4-6):293--316, 2006.
+
+\bibitem{varela2001brainweb}
+Francisco Varela, Jean-Philippe Lachaux, Eugenio Rodriguez, and Jacques
+  Martinerie.
+\newblock The brainweb: phase synchronization and large-scale integration.
+\newblock {\em Nature reviews neuroscience}, 2(4):229--239, 2001.
+
+\bibitem{golomb1994clustering}
+David Golomb and John Rinzel.
+\newblock Clustering in globally coupled inhibitory neurons.
+\newblock {\em Physica D: Nonlinear Phenomena}, 72(3):259--282, 1994.
+
+\bibitem{schuster2010application}
+Alfons Schuster and Yoko Yamaguchi.
+\newblock Application of game theory to neuronal networks.
+\newblock {\em Advances in Artificial Intelligence}, 2010, 2010.
+
+\bibitem{loewenstein2008neuroeconomics}
+George Loewenstein, Scott Rick, and Jonathan~D Cohen.
+\newblock Neuroeconomics.
+\newblock {\em Annu. Rev. Psychol.}, 59:647--672, 2008.
+
+\bibitem{srivastava2005using}
+Vivek Srivastava, James Neel, Allen~B MacKenzie, Rekha Menon, Luiz~A DaSilva,
+  James~Edward Hicks, Jeffrey~H Reed, and Robert~P Gilles.
+\newblock Using game theory to analyze wireless ad hoc networks.
+\newblock {\em IEEE Communications Surveys \& Tutorials}, 7(4):46--56, 2005.
+
+\bibitem{hampton2008neural}
+Alan~N Hampton, Peter Bossaerts, and John~P O'Doherty.
+\newblock Neural correlates of mentalizing-related computations during
+  strategic interactions in humans.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  105(18):6741--6746, 2008.
+
+\bibitem{costa2001cognition}
+Miguel Costa-Gomes, Vincent~P Crawford, and Bruno Broseta.
+\newblock Cognition and behavior in normal-form games: An experimental study.
+\newblock {\em Econometrica}, 69(5):1193--1235, 2001.
+
+\bibitem{akiyama2000dynamical}
+Eizo Akiyama and Kunihiko Kaneko.
+\newblock Dynamical systems game theory and dynamics of games.
+\newblock {\em Physica D: Nonlinear Phenomena}, 147(3-4):221--258, 2000.
+
+\bibitem{dawkins1983john}
+Richard Dawkins.
+\newblock John maynard smith, evolution and the theory of games, cambridge
+  university press, cambridge (1982), p. viii,+ 224 price{\pounds} 18.00
+  hardback,{\pounds} 6.50 paper back, 1983.
+
+\bibitem{bicchieri2004rationality}
+Cristina Bicchieri.
+\newblock Rationality and game theory.
+\newblock {\em The Oxford handbook of rationality}, pages 182--205, 2004.
+
+\bibitem{holt2004nash}
+Charles~A Holt and Alvin~E Roth.
+\newblock The nash equilibrium: A perspective.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  101(12):3999--4002, 2004.
+
+\bibitem{narahari2014game}
+Yadati Narahari.
+\newblock {\em Game theory and mechanism design}, volume~4.
+\newblock World Scientific, 2014.
+
+\bibitem{kempter1999hebbian}
+Richard Kempter, Wulfram Gerstner, and J~Leo Van~Hemmen.
+\newblock Hebbian learning and spiking neurons.
+\newblock {\em Physical Review E}, 59(4):4498, 1999.
+
+\bibitem{song2000competitive}
+Sen Song, Kenneth~D Miller, and Larry~F Abbott.
+\newblock Competitive hebbian learning through spike-timing-dependent synaptic
+  plasticity.
+\newblock {\em Nature neuroscience}, 3(9):919--926, 2000.
+
+\end{thebibliography}
