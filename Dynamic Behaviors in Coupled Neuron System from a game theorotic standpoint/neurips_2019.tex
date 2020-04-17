@@ -46,7 +46,7 @@
 \maketitle
 
 \begin{abstract}
-This paper is concerned with the theoretical investigation of game theory concepts in analyzing the behavior of dynamically coupled oscillators. Here, we claim that the coupling strength in any neuronal oscillators can be modeled using the concepts from game theory. We formulate the game to describe the effect of mixed-strategy equilibrium on two neuron systems of Hopf-oscillator and later demonstrate the application of the same assumptions and methods to $N \times N$ neuronal network. We also demonstrate the effect of the proposed method on MNIST data to show the equilibrium split of neurons in $N \times N$ neuronal grid for all the digits in MNIST digits. A major outcome of the paper is a learning algorithm based on the utility function derived from game theory.
+This paper is concerned with the theoretical investigation of game theory concepts in analyzing the behavior of dynamically coupled oscillators. Here, we claim that the coupling strength in any neuronal oscillators can be modeled as a game. We formulate the game to describe the effect of pure-strategy Nash equilibrium on two neuron systems of Hopf-oscillator and later demonstrate the application of the same assumptions and methods to $N \times N$ neuronal sheet. We also demonstrate the effect of the proposed method on MNIST data to show the equilibrium behaviour of neurons in $N \times N$ neuronal grid for all different digits. A major outcome of the paper is a modified Hebbian method for algorithm, which adapts the coupling weights to neural potential resulting in a stable phase difference.
 \\
 
 \textbf{keywords: } {Computational-modeling, Decision-making, Game-Theory, Nash-equilibrium, Coupled-Oscillator}
@@ -54,24 +54,24 @@ This paper is concerned with the theoretical investigation of game theory concep
 \end{abstract}
 
 \section{Introduction}
-Humans, like many other primitive organisms, are made up of the complex neural system, which is the combination of a large number of neurons forming complex neural architecture. Individual neurons are the build the building blocks of these complex neural architectures. Many models for single neuron behavior have been proposed and studied, to understand the coupling and firing patterns of these neurons. These models are the set of differential equations derived from the Hodgkin-Huxley model \cite{hodgkin1952dual}. Some commonly used models are Hopf-field model \cite{wang2003hopf}, FitzHugh-Nagumo model \cite{fitzhugh1961impulses}, Van der pol Oscillator \cite{parlitz1987period}, and Morris-Lecar neuron model \cite{morris1981voltage}. These models can capture some behaviors of the biological neurons \cite{gu2001integer, koper1996experimental, gu2013experimental}, As described in \cite{tsumoto2006bifurcations} Morris-Lecar model can capture the behavior of the membrane potential exhibiting spiking, or bursting state by changing the external forced current. 
+Humans, like many other primitive organisms, are made up of the complex neural system, which is the combination of a large number of neurons forming complex neural architecture. Individual neurons are the building blocks of these complex neural architectures. Many models for single neuron behavior have been proposed and studied, to understand the coupling and firing patterns of these neurons. These models are the set of differential equations derived from the Hodgkin-Huxley model \cite{hodgkin1952dual}. Some commonly used models are Hopf-field model \cite{wang2003hopf}, FitzHugh-Nagumo model \cite{fitzhugh1961impulses}, Van der pol Oscillator \cite{parlitz1987period}, and Morris-Lecar neuron model \cite{morris1981voltage}. These models can capture some behaviors of the biological neurons \cite{gu2001integer, koper1996experimental, gu2013experimental}, As described in \cite{tsumoto2006bifurcations} Morris-Lecar model can capture the behavior of the membrane potential exhibiting spiking, or bursting state by changing the external forced current. 
 
-Biological neurons always interact with one another to process information. The coupling in-between the neurons can be a result of electrical or chemical synapses. At equilibrium these neurons behave in synchrony, which results in a rhythmic group movement of information \cite{varela2001brainweb, golomb1994clustering}. This rhythmic movement is the result of neural coupling \cite{varela2001brainweb}. Tuning these coupling patterns makes it challenging to analyze the dynamic behavior of the neurons.
+Biological neurons always interact with one another to process information. The coupling in-between the neurons can be a result of electrical or chemical synapses. At equilibrium, these neurons behave in synchrony, which results in a rhythmic group movement of information \cite{varela2001brainweb, golomb1994clustering}. This rhythmic movement is the result of neural coupling \cite{varela2001brainweb}. Tuning these coupling patterns makes it challenging to analyze the dynamic behavior of the neurons.
 
 Recently, game theory has gained some attention in the field of neuroscience \cite{schuster2010application}. For instance, Neuroeconomics is the field where the concepts from game theory are extensively used to understand the decision-making process in humans \cite{loewenstein2008neuroeconomics}. Game theory can be applied to a wide variety of fields to analyze decision-making strategies followed by players \cite{srivastava2005using}. In \cite{hampton2008neural}, the authors formulated a simple two-player strategy game and tried to correlate their model prediction with functional MRI (fMRI) data. Most behavioral game theory literature demonstrates that humans think strategically in a single game, but strongly considers the strategies of the opponent \cite{costa2001cognition}. 
 
-Dynamic game theory has also gained attention in recent days. In a dynamic system (DS) games, the very act of a player changes the dynamics of the game \cite{akiyama2000dynamical}. DS games have an evolving system of differential equations as a game environment, and these games have temporal components, and players make decisions at every instant of time. Evolutionary game theory \cite{dawkins1983john} has also offered some similar concepts of using the temporal component in games.
+Dynamic game theory has also gained attention in recent days. In a dynamic system (DS) games, the very act of a player changes the dynamics of the game \cite{akiyama2000dynamical}. DS games have an evolving system of differential equations as a game environment, these games have temporal components, and players make decisions at every instant of time. Evolutionary game theory \cite{dawkins1983john} has also offered some similar concepts of using the temporal component in games.
 
-Considering the beliefs as variable and updating the beliefs based on some learning is rarely incorporated in the games. In the context of this paper, we consider each and every neuron to be a player, and they are provided with the two different strategies which correspond to couple or not to couple with other neurons. The coupling terms if made as a learnable parameter, which is updated based on the player's utility.
+Considering the beliefs as variable and updating the beliefs based on some learning is rarely incorporated in the games. In the context of this paper, we consider each and every neuron to be a player, and they are provided with the two different strategies which correspond to couple or not to couple with other neurons. The coupling weightage if made as a learnable parameter, which is updated based on the player's modified Hebbian rule.
 
 \begin{figure}
  \centering
  \includegraphics[width=1\textwidth]{overview.png}
- \caption{Above figure illustrates the proposed frame work. Input is random in case of two neuron framework, While it's MNIST digit in case of network example. Dimensionality reduction is SOM layer for network game, while it's identity block in case of two neuron game. ${Z_i}$ are neurons included in the game, $a_i$ is the action followed by the neuron (player) $i$, the selected action will affect the environment, the potential of the neuron will affect the firing of other neurons.}
+ \caption{Above figure illustrates the proposed framework. Input is random in the case of two neuron framework, While it's MNIST digit in case of network example. Dimensionality reduction is the SOM layer for network games while it's an identity block in the case of two neuron games. ${Z_i}$ are neurons included in the game, $a_i$ is the action followed by the neuron (player) $i$, the selected action affects the environment, the potential of the neuron affects the firing of other neurons.}
  \label{fig: overview}
 \end{figure}
 
-Figure \ref{fig: overview} describes the overall structure of the proposed framework. In the remainder of this text, Section \ref{hpfosc} summarizes the Hopf-Oscillator and outlines circuit dynamics of the coupled neuron system. Section \ref{gameforintep} includes the game-theoretic formulation of the problem, also provides the interpretation of biological neurons. Section \ref{learning} summarizes the learning step and outlines its relation with game theory. Section \ref{exp} includes experimental details, followed by results and discussion in section \ref{resdis}. Section \ref{conc} ends the paper with conclusion.
+Figure \ref{fig: overview} describes the overall structure of the proposed framework. In the remainder of this text, Section \ref{hpfosc} summarizes the Hopf-Oscillator and outlines circuit dynamics of the coupled neuron system. Section \ref{somsec} deals with Self-Organizing Maps. Section \ref{gameforintep} includes the game-theoretic formulation of the problem, also provides the interpretation of biological neurons. Section \ref{learning} summarizes the learning step and outlines its relation with game theory. Section \ref{exp} includes experimental details, followed by results and discussion in section \ref{resdis}. Section \ref{conc} ends the paper with conclusion.
 
 \section{Hopf Coupled Oscillator}
 \label{hpfosc}
@@ -135,19 +135,19 @@ Let ($\psi = \theta_2 - \theta_1$, $r = r_2 - r_1$), at equilibrium $\dot{\psi} 
 \end{figure}
 
 \section{Self Organizing Map (SOM)}
-
+\label{somsec}
 \begin{figure}
  \centering
  \includegraphics[width=1.\textwidth]{som_response.png}
  \caption{SOM response on MNIST handwritten digits; top row indicates MNIST test digits and bottom row indicates SOM responses for the given input data}
  \label{fig: som_response}
 \end{figure}
-The proposed network game uses Self-organizing Map (SOM) model as proposed by Kohonen \cite{}, whcih accounts for several key features of MNIST hand written digits \cite{}, these features are further used by neural sheet for further steps. SOM is type of unsupervised learning framework used for dimensionality reduction. In our case we use SOM to reduce the dimensionality of MNIST data from $(28\times28)$ to $10\times10$. The SOM was trained with MNIST hand written digits, Once trained the responses of SOM layer for any hand written digits is described in figure \ref{fig: som_response}, we make use of these responses with key features for our further analysis.
+The proposed network game uses the Self-organizing Map (SOM) model as proposed by Kohonen \cite{kohonen1982self}, which accounts for several key features of MNIST handwritten digits \cite{lecun-mnisthandwrittendigit-2010}, these features are further used by the neural sheet for further steps. SOM is a type of unsupervised learning framework used for dimensionality reduction. In our case, we use SOM to reduce the dimensionality of MNIST data from $(28\times28)$ to $10\times10$. The SOM was trained with MNIST handwritten digits. Once trained, the responses of the SOM layer for any handwritten digits is described in figure \ref{fig: som_response}, we make use of these responses with key features for our further analysis.
 
 \section{Game Theoretic Formulation and Interpretations}
 \label{gameforintep}
 
-In order to appreciate and fully understand forthcoming sections, it's important to brief about different games and also layout the proposed structure mathematically. For this work, we formulate this coupling game as a strategic form game. As in this game, we assume that the decisions of both the players are independent and non-cooperative in nature. Figure \ref{fig: two_neurons}, indicates the both players involved: $N = \{Neuron-1, Neuron-2\}$, strategies possible for both the players are: $s_i = \{Couple(C), Don't-Couple(DC)\}$. The neuronal potential to mapped to strategies as described in equation \ref{eqn: potential_strat}. Strategy set ${s_1}$ and ${s_2}$, will result in total $s_1 \times s_2$ strategies. In this case all the strategies are: $\{\{C, C\}, \{C, DC\}, \{DC, C\}, \{DC, DC\}\}$. As biology encourages synchrony, we model the utilities accordingly; the payoff matrix in figure \ref{fig: payoff} describes the same.
+In order to appreciate and fully understand forthcoming sections, it's important to brief about different games and also layout the proposed structure mathematically. For this work, we formulate this coupling game as a strategic form game. In this game, we assume that the decisions of both the players are independent and non-cooperative in nature. Figure \ref{fig: two_neurons}, indicates the both players involved: $N = \{Neuron-1, Neuron-2\}$, strategies possible for both the players are: $s_i = \{Couple(C), Don't-Couple(DC)\}$. The neuronal potential to mapped to strategies as described in equation \ref{eqn: potential_strat}. Strategy set ${s_1}$ and ${s_2}$, will result in total $s_1 \times s_2$ strategies. In this case all the strategies are: $\{\{C, C\}, \{C, DC\}, \{DC, C\}, \{DC, DC\}\}$. As biology encourages synchrony, we model the utilities accordingly; the payoff matrix in figure \ref{fig: payoff} describes the same.
 In the payoff matrix in figure \ref{fig: payoff}, using the definitions of rationality and common knowledge, the game can be reduced to an equilibrium point where both the players find coupling as the most advantageous action (strategy set $\{C, C\}$). 
 
 \begin{equation}
@@ -167,9 +167,9 @@ In the payoff matrix in figure \ref{fig: payoff}, using the definitions of ratio
  \label{fig: payoff}
 \end{figure}
 
-\textit{Payoff Matrix:} Is used to map set of strategies to there utilities, where utility function is a mapping from strategy space to real-valued number ($u_i: \{s_1 \times s_2\} \rightarrow \mathbb{R}$). In this paper, we modeling coupling as a game, figure \ref{fig: payoff} describes the payoff matrix for this game. As synchronization can be observed from biological neurons, we provide a higher payoff for the player willing to a couple.   
+\textit{Payoff Matrix:} Payoff matrix is used to map set of strategies to there utilities, where utility function is a mapping from strategy space to real-valued number ($u_i: \{s_1 \times s_2\} \rightarrow \mathbb{R}$). In this paper, we model coupling as a game, figure \ref{fig: payoff} describes the payoff matrix for this game. As synchronization can be observed from biological neurons, we provide a higher payoff for the player willing to a couple.   
 
-\textit{Common Knowledge:} Common Knowledge is information that is the same and known by all the players. In the formulated game as any player at any point of time know the utilities and all the strategies of other player, which makes it complete information game. (Every player knows all the possible strategies of other player, but not the exact strategy what the opponents play)
+\textit{Common Knowledge:} Common Knowledge is information that is the same and known by all the players. In the formulated game as any player at any point of time know the utilities and all the strategies of other players, which makes it complete information game. (Every player knows all the possible strategies of other players, but not the exact strategy what the opponents play)
 
 \textit{Rationality:} Economists and mathematicians invoke arguments about "rational" behavior to explain the behavior of players based on given circumstances \cite{bicchieri2004rationality}. These assumptions can be considered as building blocks in game theory. One of the assumptions of rationality is that the player never plays a strategy, which provides less payoff when compared to other strategies in certain external circumstances.
 
@@ -224,7 +224,7 @@ Theoretical coupling to strategies relation is described in the table \ref{tab: 
 \section{Expirements}
 \label{exp}
 
-\textit{Two Neuron model:} First, to validate the formulated game, we demonstrate the behavior of the neuronal system due to coupling and the above utility form. Here, we randomly initialize the potential for $z_1$ and $z_2$ and use numerical methods and modified Hebbian rule to drive neuronal potential to an equilibrium point.
+\textit{Two Neuron model:} First, to validate the formulated game, we demonstrate the behavior of the neuronal system as described in figure \ref{fig: two_neurons}, due to coupling and the above utility form. Here, we randomly initialize the potential for $z_1$ and $z_2$ and use numerical methods and modified Hebbian rule to drive neuronal potential to an equilibrium point.
 
 \textit{Network Extention:} We perform this experiment, to demonstrate the formulated game on the network of $N\times N$ neurons, where each neuron is connected to its adjacent 4 neurons as described in figure \ref{fig: network_neurons}. We use SOM responses to initialize these neurons and again use numerical methods along with modified Hebbian rule to achieve equilibrium. In this experiment, the aim is to observe different equilibrium coupling phases for different digits in the dataset. The system of equations defining the network game and the corresponding Hebbian rule is described in equations \ref{eqn: multi_neuron} where $Nbr_{z_k}$ denotes neighboring neurons, which are directly connected to $z_k$.
 
@@ -238,23 +238,37 @@ Theoretical coupling to strategies relation is described in the table \ref{tab: 
 
 \section{Results and Discussion}
 \label{resdis}
-\begin{figure}[h]
+
+\begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{two_neuron_phase_potential.png}
-    \caption{Results for two neuron model}
-    \label{hist_exp}
+    \subfloat{\includegraphics[width=.5\textwidth]{two_neuron_phase_potential.png}}
+    \subfloat{\includegraphics[width=.5\textwidth]{two_neuron_phase_potential_1.png}}
+    \caption{Results for two neuron model, Orange plot denotes player1's oscillations and blue describes player2's oscillations}
+    \label{fig: two_neuron_results}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{mnist_phase.png}
-    \caption{Unwrapped phase of (5,5) neuron in  neural sheet for, different input MNIST digit}
-    \label{hist_exp}
+    \caption{Unwrapped phase of (5,5) neuron in a neural sheet for different input MNIST digit}
+    \label{fig: mnist_phase}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{mnist_phase_random.png}
+    \caption{Unwrapped phase of randomly selected neuron in a neural sheet for different input MNIST digit}
+    \label{fig: mnist_phase_random}
+\end{figure}
+
+In this study, we show that concepts from game theory can be incorporated in networks to analyze neuronal coupling. As discussed in previous sections, we conducted experiments on two neuron models and networks of neurons. In the case of two neurons, it can be seen that the system converges with a fixed phase difference, which is dependent on the random initialization of the oscillator. Figure \ref{fig: two_neuron_results} describes the system oscillation for two different random starting points. In each plot first row illustrates the real part, the second row illustrates the imaginary part, and the third row indicates the phase of the oscillator.
+
+It's interesting to see that similar behavior can be observed in network oscillations. Figure \ref{fig: mnist_phase} indicates the unwrapped phase of the player (5,5) in a neural sheet, where it can be easily noted that the oscillator behaves differently for each digit. Similar observations can be done on any randomly selected neuron from a neural sheet \ref{fig: mnist_phase_random}. This shows that once when the neural sheet oscillates at synchrony, each and every neuron has the capability to differentiate the input, which is very interesting.  
+
 
 \section{Conclusion}
 \label{conc}
-The paper provides a novel concept for formulating the neuron coupling as a game, to our knowledge, this the first time neural coupling is formulated using a game-theoretic framework. In the paper, we also demonstrate the modified Hebbian rule for learning coupling parameters and demonstrate the results on a network and two neuron frameworks. The proposed method is tested on Hopf oscillator but can be easily extended to any other oscillators. These findings are further correlated with biological neuronal behavior in terms of synchronization and synaptic strength development.  
+The paper provides a novel concept for formulating the neuron coupling as a game, to our knowledge, this is the first time neural coupling is formulated using a game-theoretic framework. In the paper, we also demonstrate the modified Hebbian rule for learning coupling parameters and demonstrate the results on a network and two neuron frameworks. The proposed method is tested on Hopf oscillator but can be easily extended to any other oscillators. These findings are further correlated with biological neuronal behavior in terms of synchronization and synaptic strength development.  
 
 \subsubsection*{Acknowledgments}
 

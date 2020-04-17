@@ -106,6 +106,16 @@ Richard Dawkins.
   university press, cambridge (1982), p. viii,+ 224 price{\pounds} 18.00
   hardback,{\pounds} 6.50 paper back, 1983.
 
+\bibitem{kohonen1982self}
+Teuvo Kohonen.
+\newblock Self-organized formation of topologically correct feature maps.
+\newblock {\em Biological cybernetics}, 43(1):59--69, 1982.
+
+\bibitem{lecun-mnisthandwrittendigit-2010}
+Yann LeCun and Corinna Cortes.
+\newblock {MNIST} handwritten digit database.
+\newblock 2010.
+
 \bibitem{bicchieri2004rationality}
 Cristina Bicchieri.
 \newblock Rationality and game theory.

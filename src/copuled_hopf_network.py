@@ -97,7 +97,7 @@ for digit in digits:
     Zs = np.array(Zs)
     mZs = np.mean(Zs, axis=0)
     idx = np.where(mZs == np.max(mZs))
-    phase_information.append(np.unwrap(np.angle((Zs[:, 5, 5]))))
+    phase_information.append(np.unwrap(np.angle((Zs[:, 2, 2]))))
     magnitude_information.append(np.mean(Zs, axis=0))
 
 
